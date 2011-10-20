@@ -72,12 +72,31 @@ Say you have Rambola in ~/Applications/Rambola, do this on a terminal -
     ~/Applications/Rambola/disable.sh
 
 
+How do I change the RamDisk size?
+---------------------------------
+Get into Rambola's folder, open helper.sh under src & change the number there -
+
+    RAMDISK_SIZE=1024 # Size in Mega Bytes.
+
+
 How do I retain RamDisk data?
 -----------------------------
 By default Rambola keeps a synced backup into ~/Library/CachesSnapshotRamDisk.
 It syncs the RamDisk every time you logout/restart/shutdown and restores when
 you start your machine back. If worried about power-cuts, then by default,
 Rambola also syncs the backup every 45 minutes in background.
+
+
+Have I tested that?
+-------------------
+I've tested that while development, but I do not guarantee anything. So, do test
+it out before symlinking anything precious into the RamDisk.
+
+
+How do I figure out what's happening in the background?
+-------------------------------------------------------
+Open OS X's Console (fire from spotlight, or Applications->Utilities), and
+just filter for Rambola to see what happened and is happening.
 
 
 How do I disable the 45 minute syncs running in background?
