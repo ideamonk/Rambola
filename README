@@ -128,10 +128,11 @@ Rambola also syncs the backup every 45 minutes in background.
 
 
 
-Have I tested that?
--------------------
+Have I tested RamDisk retainment?
+---------------------------------
 I've tested that while development, but I do not guarantee anything. So, do test
-it out before copy-&-symlinking anything precious into the RamDisk.
+it out before copy-&-symlinking anything precious into the RamDisk. Also, I've 
+used/tested it on OS X 10.6.8 only.
 
 
 
@@ -162,6 +163,24 @@ let SAFETY_BACKUP_INTERVAL=45 # backup interval in minutes
 Does it support multiple users?
 -------------------------------
 Once enabled, it should work for every user. Though I haven't tested it out.
+
+
+
+Any caveats?
+------------
+Oh yes, putting too many things into RamDisk might make the restoration that 
+happens when you login, a bit slow. But how many times do we login back anyway.
+
+In case you don't want things this way, you could make the rsync call that
+restores contents asynchronous by changing this -
+    $AS_USER $RSYNC "${SNAPSHOT_LOCATION}" "${DEST}"
+    into 
+    $AS_USER $RSYNC "${SNAPSHOT_LOCATION}" "${DEST}" &
+in src/helper.sh
+
+However in that case do not cache anything that would be needed as soon as you
+log in. And there is now way to figure out if rsync call got over, other than
+looking into Console.
 
 
 

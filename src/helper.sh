@@ -74,7 +74,8 @@ function restore_contents_from_snapshot
   
    DEST="/Volumes/${RAMDISK_NAME}/"
    log "Restoring snapshot from \"${SNAPSHOT_LOCATION}\" to \"${DEST}\"."
-   $AS_USER $RSYNC "${SNAPSHOT_LOCATION}" "${DEST}" &
+   $AS_USER $RSYNC "${SNAPSHOT_LOCATION}" "${DEST}"
+   log "Finished restoring snapshot from \"${SNAPSHOT_LOCATION}\" to \"${DEST}\"."
 }
 
 function store_contents_on_snapshot
