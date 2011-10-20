@@ -183,6 +183,12 @@ However in that case do not cache anything that would be needed as soon as you
 log in. And there is now way to figure out if rsync call got over, other than
 looking into Console.
 
+Here's another advantage of not doing the above and letting Rambola work as it
+is designed to. When Rambola runs as LoginHook, OS X stops loading any other 
+startup apps (even finder, dock, etc) unless it restores the snapshot to 
+RamDisk. This is good for us as now we can cache many of those frequently 
+written folders under ~/Library
+
 
 
 Why was this created?
