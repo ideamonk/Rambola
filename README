@@ -90,6 +90,21 @@ Say you have Rambola in ~/Applications/Rambola, do this on a terminal -
     ~/Applications/Rambola/disable.sh
 
 
+How do I update to latest version?
+----------------------------------
+I haven't figured out a clean way yet. This might make you lose the changes you
+made in helper.sh. So it's upto you to restore them.
+
+Say you have Rambola in ~/Applications/Rambola, do this on a terminal -
+
+    cd ~/Applications/Rambola
+    git checkout .
+    git pull
+
+Now edit src/helper.sh and put back your settings in case you changed any.
+Logout and login back to make latest script work.
+    
+
 How do I change the RamDisk size?
 ---------------------------------
 Get into Rambola's folder, open helper.sh under src & change the number there -
