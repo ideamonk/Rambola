@@ -1,0 +1,117 @@
+                   __                 _           _       
+                  /__\ __ _ _ __ ___ | |__   ___ | | __ _ 
+                 / \/// _` | '_ ` _ \| '_ \ / _ \| |/ _` |
+                / _  \ (_| | | | | | | |_) | (_) | | (_| |
+                \/ \_/\__,_|_| |_| |_|_.__/ \___/|_|\__,_|
+
+based on QuickSander's [1] Cache2RAM script [2]
+improvised for data retainment done right on logout/restart/shutdown/schedule
+
+Author : Abhishek Mishra 
+
+
+What is this?
+-------------
+A bunch of scripts to manage a RamDisk on your mac.
+
+
+Why use a RamDisk?
+------------------
+To cache the shit you want to fly fast across the fans :D or, have a look at
+these XBench results -
+
+    HDD -
+    =====
+        Sequential	114.94	
+        	Uncached Write	116.50	65.92 MB/sec [256K blocks]
+        	Uncached Read	140.07	70.40 MB/sec [256K blocks]
+    
+        Random	33.36	
+        	Uncached Write	103.96	33.28 MB/sec [256K blocks]
+        	Uncached Read	117.44	21.79 MB/sec [256K blocks]
+
+    RamDisk -
+    =========
+        Sequential	973.74	
+        	Uncached Write	2530.99	1432.04 MB/sec [256K blocks]
+        	Uncached Read	2907.41	1461.24 MB/sec [256K blocks]
+        Random	3551.18	
+        	Uncached Write	4954.97	1586.27 MB/sec [256K blocks]
+        	Uncached Read	7848.65	1456.37 MB/sec [256K blocks]
+    
+    
+What do I use it for?
+---------------------
+Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
+    * eclipse workspace, projects
+    * eclipse plugins
+    * android sdk platforms, whichever I'm working on
+    * Chrome cache and Application Support/Google/Chrome folder
+    * Safari Cache
+    * Firefox Cache
+
+Just symlink whatever you wish into the RamDisk.
+
+
+How do I use this?
+------------------
+Do the following on a terminal -
+    cd ~/Applications
+    git clone https://ideamonk@github.com/ideamonk/Rambola.git
+    cd Rambola
+    ./enable.sh
+    
+This shall push Rambola into your Login/Logout Hooks. Just logout and log back
+in to see a RamDisk mounted in Finder.
+
+
+How do I disable this?
+----------------------
+Say you have Rambola in ~/Applications/Rambola, do this on a terminal -
+
+    ~/Applications/Rambola/disable.sh
+
+
+How do I retain RamDisk data?
+-----------------------------
+By default Rambola keeps a synced backup into ~/Library/CachesSnapshotRamDisk.
+It syncs the RamDisk every time you logout/restart/shutdown and restores when
+you start your machine back. If worried about power-cuts, then by default,
+Rambola also syncs the backup every 45 minutes in background.
+
+
+How do I disable the 45 minute syncs running in background?
+-----------------------------------------------------------
+Get into Rambola's folder, open helper.sh under src and change -
+    TIMELY_BACKUP=yes , into,
+        
+    TIMELY_BACKUP=no
+
+
+How do I change the time period for automatic background syncs?
+---------------------------------------------------------------
+Get into Rambola's folder, open helper.sh under src and change the number
+in this line -
+let SAFETY_BACKUP_INTERVAL=45 # backup interval in minutes
+
+
+Does it support multiple users?
+-------------------------------
+Once enabled, it should work for every user. Though I haven't tested it out.
+
+
+Why was this created?
+---------------------
+Uh, I assumed QuickSander's sweet app Cache2RAM [2] to be too sweet to retain
+things on logout/restart/shutdown. Alas! I lost a bunch of good things I cached
+and had to modify to bend it to my own needs.
+
+
+Why is it named Rambola?
+------------------------
+Uh, I dunno, maybe 'cause ramona bambola is a bit too hot on tv.
+
+Have fun.
+
+[1] http://hints.macworld.com/users.php?mode=profile&uid=1054078
+[2] http://hints.macworld.com/article.php?story=2011010204203424
