@@ -48,10 +48,11 @@ Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
     * eclipse workspace, projects
     * eclipse plugins
     * android sdk platforms, whichever I'm working on
+    * JavaVirtualMachines under /System/Library/Java/
     * Chrome cache and Application Support/Google/Chrome folder
     * Safari Cache
     * Firefox Cache
-
+    
 Just symlink whatever you wish into the RamDisk. Checkout the Safari example at
 http://hints.macworld.com/article.php?story=2011010204203424
 
