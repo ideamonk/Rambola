@@ -50,8 +50,10 @@ Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
     * android sdk platforms, whichever I'm working on
     * JavaVirtualMachines under /System/Library/Java/
     * Chrome cache and Application Support/Google/Chrome folder
-    * Safari Cache
-    * Firefox Cache
+    * Safari, Firefox cache
+    * Finder's cache (quite a boost)
+    * iCal, iChat, AppleMail, iTynes caches
+    * Skype, twitter, 1Password cache
     
 Just symlink whatever you wish into the RamDisk. Checkout the Safari example at
 http://hints.macworld.com/article.php?story=2011010204203424
