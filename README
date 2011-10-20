@@ -52,8 +52,9 @@ Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
     * Chrome cache and Application Support/Google/Chrome folder
     * Safari, Firefox cache
     * Finder's cache (quite a boost)
-    * iCal, iChat, iTunes (from ~/Library as well as ~/Library/Caches)
+    * iCal, iChat (from ~/Library as well as ~/Library/Caches, iCal has become instant)
     * Skype, twitter, 1Password cache
+    * ~/Music/iTunes (iTunes Media has been kept outside and symlinked into ~/Music/iTunes)
     
 Just symlink whatever you wish into the RamDisk. Checkout the Safari example at
 http://hints.macworld.com/article.php?story=2011010204203424
