@@ -15,6 +15,7 @@ What is this?
 A bunch of scripts to manage a RamDisk on your mac.
 
 
+
 Why use a RamDisk?
 ------------------
 To cache the shit you want to fly fast across the fans :D or, have a look at
@@ -39,6 +40,7 @@ these XBench results -
         	Uncached Write	4954.97	1586.27 MB/sec [256K blocks]
         	Uncached Read	7848.65	1456.37 MB/sec [256K blocks]
     
+  
     
 What do I use it for?
 ---------------------
@@ -52,6 +54,7 @@ Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
 
 Just symlink whatever you wish into the RamDisk. Checkout the Safari example at
 http://hints.macworld.com/article.php?story=2011010204203424
+
 
 
 How do I use this?
@@ -83,11 +86,13 @@ This shall push Rambola into your Login/Logout Hooks. Just logout and log back
 in to see a RamDisk mounted in Finder.
 
 
+
 How do I disable this?
 ----------------------
 Say you have Rambola in ~/Applications/Rambola, do this on a terminal -
 
     ~/Applications/Rambola/disable.sh
+
 
 
 How do I update to latest version?
@@ -105,11 +110,13 @@ Now edit src/helper.sh and put back your settings in case you changed any.
 Logout and login back to make latest script work.
     
 
+
 How do I change the RamDisk size?
 ---------------------------------
 Get into Rambola's folder, open helper.sh under src & change the number there -
 
     RAMDISK_SIZE=1024 # Size in Mega Bytes.
+
 
 
 How do I retain RamDisk data?
@@ -120,16 +127,19 @@ you start your machine back. If worried about power-cuts, then by default,
 Rambola also syncs the backup every 45 minutes in background.
 
 
+
 Have I tested that?
 -------------------
 I've tested that while development, but I do not guarantee anything. So, do test
 it out before copy-&-symlinking anything precious into the RamDisk.
 
 
+
 How do I figure out what's happening in the background?
 -------------------------------------------------------
 Open OS X's Console (fire from spotlight, or Applications->Utilities), and
 just filter for Rambola to see what happened and is happening.
+
 
 
 How do I disable the 45 minute syncs running in background?
@@ -140,6 +150,7 @@ Get into Rambola's folder, open helper.sh under src and change -
     TIMELY_BACKUP=no
 
 
+
 How do I change the time period for automatic background syncs?
 ---------------------------------------------------------------
 Get into Rambola's folder, open helper.sh under src and change the number
@@ -147,9 +158,11 @@ in this line -
 let SAFETY_BACKUP_INTERVAL=45 # backup interval in minutes
 
 
+
 Does it support multiple users?
 -------------------------------
 Once enabled, it should work for every user. Though I haven't tested it out.
+
 
 
 Why was this created?
@@ -157,6 +170,7 @@ Why was this created?
 Uh, I assumed QuickSander's sweet app Cache2RAM [2] to be too sweet to retain
 things on logout/restart/shutdown. Alas! I lost a bunch of good things I cached
 and had to modify to bend it to my own needs.
+
 
 
 Why is it named Rambola?
