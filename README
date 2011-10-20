@@ -50,12 +50,30 @@ Ever since I put those 2 4gig sticks, I've been caching these on RamDisk -
     * Safari Cache
     * Firefox Cache
 
-Just symlink whatever you wish into the RamDisk.
+Just symlink whatever you wish into the RamDisk. Checkout the Safari example at
+http://hints.macworld.com/article.php?story=2011010204203424
 
 
 How do I use this?
 ------------------
-Do the following on a terminal -
+First, get this done - http://www.bombich.com/rsync.html
+
+Do this - /usr/local/bin/rsync --version
+and you should see the following - 
+
+rsync  version 3.0.7  protocol version 30
+Copyright (C) 1996-2009 by Andrew Tridgell, Wayne Davison, and others.
+Web site: http://rsync.samba.org/
+Capabilities:
+    64-bit files, 64-bit inums, 64-bit timestamps, 64-bit long ints,
+    socketpairs, hardlinks, symlinks, IPv6, batchfiles, inplace,
+    append, ACLs, xattrs, no iconv, symtimes, file-flags
+
+rsync comes with ABSOLUTELY NO WARRANTY.  This is free software, and you
+are welcome to redistribute it under certain conditions.  See the GNU
+General Public Licence for details.
+
+Now if that's all fine and set, do the following on a terminal -
     cd ~/Applications
     git clone https://ideamonk@github.com/ideamonk/Rambola.git
     cd Rambola
@@ -90,7 +108,7 @@ Rambola also syncs the backup every 45 minutes in background.
 Have I tested that?
 -------------------
 I've tested that while development, but I do not guarantee anything. So, do test
-it out before symlinking anything precious into the RamDisk.
+it out before copy-&-symlinking anything precious into the RamDisk.
 
 
 How do I figure out what's happening in the background?
